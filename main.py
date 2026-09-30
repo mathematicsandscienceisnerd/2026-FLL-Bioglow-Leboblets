@@ -1,6 +1,8 @@
 #Run this before running the program.
 #runfll - it is an alias to open the virtual environment
 #startfll - it is an alias to run the program.
+#turn the robot on and press bluetooth button before starting
+#Use side buttons to select a mission and central one to run
 
 #Once you commit, type " git push -u origin main " into the terminal to publish.
 
@@ -163,17 +165,66 @@ def mission_selector():
 @mission("Drives forward.")
 def mission_1():
     wait(500)
-    drive_base.straight(100)
+    drive_base.straight(400)
 
 @mission("Drives backward.")
 def mission_2():
     wait(500)
-    drive_base.straight(-100)
+    drive_base.straight(-400)
 
 @mission("Turns 90 degrees right.")
 def mission_3():
     wait(500)
     drive_base.turn(90)
+
+@mission("Spins left attachment motor a full revolution clockwise.")
+def mission_4():
+    wait(500)
+    lbm.run_angle(300, -120)
+    lbm.run_angle(300, 120)
+
+@mission("Spins right attachment motor a fuull revolution anticlockwise.")
+def mission_5():
+    wait(500)
+    rbm.run_angle(300, -360)
+
+@mission("Drives straight until stalled.")
+def mission_6():
+    wait(500)
+    drive_base.straight_until_stalled()
+
+@mission("Test attachment.")
+def mission_7():
+    print(hub.imu.heading())
+    wait(500)
+    drive_base.straight(300)
+    drive_base.turn(540)
+    drive_base.straight(500)
+    print(hub.imu.heading()%180)
+    
+@mission("Square")
+def mission_8():
+    wait(500)
+    print(hub.imu.heading())
+    drive_base.straight(300)
+    drive_base.turn(90)
+    print(hub.imu.heading())
+    drive_base.straight(300)
+    drive_base.turn(90)
+    print(hub.imu.heading())
+    drive_base.straight(300)
+    drive_base.turn(90)
+    print(hub.imu.heading())
+    drive_base.straight(300)
+    drive_base.turn(90)
+    print(hub.imu.heading())
+
+@mission("Tree lift")
+def mission_9():
+    wait(500)
+    drive_base.settings(straight_speed=500)
+    drive_base.straight(100)
+    drive_base.settings(straight_speed=1000)
 
 def main():
     voltage = hub.battery.voltage()
@@ -192,7 +243,7 @@ def main():
         turn_rate=400,
         turn_acceleration=500
     )
-
+   
     mission_selector()  
 
 main()
