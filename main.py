@@ -83,6 +83,14 @@ class LebobletsBase(DriveBase):
             wait(10)
         self._stop_with(then)
 
+    def first_drive_callibrate(self, time):
+        time = time
+        speed = 400
+        calibrate_value = 7
+        self.drive(speed,calibrate_value)
+        wait(time)
+        self._stop_with(then="")
+
 drive_base = LebobletsBase(ld, rd, wheel_diameter=WHEEL_DIAMETRE, axle_track=AXLE_TRACK)
 drive_base.use_gyro(True)
 
@@ -172,59 +180,27 @@ def mission_2():
     wait(500)
     drive_base.straight(-400)
 
-@mission("Turns 90 degrees right.")
+@mission("The glass thingy composter.")
 def mission_3():
     wait(500)
-    drive_base.turn(90)
+    drive_base.straight(640)
+    drive_base.turn(45)
+    drive_base.straight(210)
+    wait(500)
+    drive_base.straight(-100)
 
-@mission("Spins left attachment motor a full revolution clockwise.")
+
+@mission("Test wobbles")
 def mission_4():
     wait(500)
-    lbm.run_angle(300, -120)
-    lbm.run_angle(300, 120)
+    drive_base.straight(20000)
 
-@mission("Spins right attachment motor a fuull revolution anticlockwise.")
+@mission("First drive calibrate.")
 def mission_5():
     wait(500)
-    rbm.run_angle(300, -360)
-
-@mission("Drives straight until stalled.")
-def mission_6():
+    drive_base.first_drive_callibrate(1000)
     wait(500)
-    drive_base.straight_until_stalled()
-
-@mission("Test attachment.")
-def mission_7():
-    print(hub.imu.heading())
-    wait(500)
-    drive_base.straight(300)
-    drive_base.turn(540)
-    drive_base.straight(500)
-    print(hub.imu.heading()%180)
-    
-@mission("Square")
-def mission_8():
-    wait(500)
-    print(hub.imu.heading())
-    drive_base.straight(300)
-    drive_base.turn(90)
-    print(hub.imu.heading())
-    drive_base.straight(300)
-    drive_base.turn(90)
-    print(hub.imu.heading())
-    drive_base.straight(300)
-    drive_base.turn(90)
-    print(hub.imu.heading())
-    drive_base.straight(300)
-    drive_base.turn(90)
-    print(hub.imu.heading())
-
-@mission("Tree lift")
-def mission_9():
-    wait(500)
-    drive_base.settings(straight_speed=500)
     drive_base.straight(100)
-    drive_base.settings(straight_speed=1000)
 
 def main():
     voltage = hub.battery.voltage()
