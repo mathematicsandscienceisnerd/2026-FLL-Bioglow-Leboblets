@@ -214,8 +214,8 @@ def mission_3():
         turn_rate=400,
         turn_acceleration=500
     )
-    drive_base.turn(65)
     drive_base.straight(200)
+    drive_base.turn(65)
     # drive_base.straight(500)
     # drive_base.straight_until_stalled(speed=-300)
 
