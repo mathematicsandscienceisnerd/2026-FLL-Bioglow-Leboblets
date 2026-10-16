@@ -180,11 +180,12 @@ def mission_2():
     wait(500)
     drive_base.straight(-400)
 
-@mission("The glass thingy composter.")
+@mission("Blue side.")
 def mission_3():
+    global drive_base
     wait(500)
     drive_base.straight_until_stalled(speed=-100)
-    drive_base.straight(680)
+    drive_base.straight(718)
     drive_base.turn(45)
     drive_base.straight_until_stalled(speed=300)
     wait(1000)
@@ -193,8 +194,30 @@ def mission_3():
     drive_base.straight(60)
     drive_base.turn(20)
     drive_base.straight(-100)
-    drive_base.turn(-80)
-    drive_base.straight_until_stalled(speed=-300)
+
+    drive_base.turn(-85)
+    drive_base.straight(-30)
+    drive_base.turn(-72)
+    drive_base.straight(310)
+    drive_base.turn(-65)
+    drive_base.settings(
+        straight_speed=100,
+        straight_acceleration=1000,
+        turn_rate=400,
+        turn_acceleration=500
+    )
+    drive_base.straight(-200)
+    wait(500)
+    drive_base.settings(
+        straight_speed=1000,
+        straight_acceleration=1000,
+        turn_rate=400,
+        turn_acceleration=500
+    )
+    drive_base.turn(65)
+    drive_base.straight(200)
+    # drive_base.straight(500)
+    # drive_base.straight_until_stalled(speed=-300)
 
 @mission("First drive calibrate.")
 def mission_4():
