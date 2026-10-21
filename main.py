@@ -14,8 +14,8 @@ from pybricks.tools import wait, StopWatch
 
 hub = PrimeHub()
 
-ld = Motor(Port.E, positive_direction=Direction.COUNTERCLOCKWISE)
-rd = Motor(Port.F, positive_direction=Direction.CLOCKWISE)
+ld = Motor(Port.F, positive_direction=Direction.COUNTERCLOCKWISE)
+rd = Motor(Port.E, positive_direction=Direction.CLOCKWISE)
 
 lbm = Motor(Port.C)
 rbm = Motor(Port.D)
@@ -185,6 +185,7 @@ def mission_3():
     global drive_base
     wait(500)
     drive_base.straight_until_stalled(speed=-100)
+    wait(500)
     drive_base.straight(718)
     drive_base.turn(45)
     drive_base.straight_until_stalled(speed=300)
@@ -193,29 +194,33 @@ def mission_3():
     drive_base.turn(15)
     drive_base.straight(60)
     drive_base.turn(20)
-    drive_base.straight(-100)
+    drive_base.straight(-80)
 
     drive_base.turn(-85)
     drive_base.straight(-30)
-    drive_base.turn(-72)
-    drive_base.straight(310)
-    drive_base.turn(-65)
-    drive_base.settings(
-        straight_speed=100,
-        straight_acceleration=1000,
-        turn_rate=400,
-        turn_acceleration=500
-    )
-    drive_base.straight(-200)
-    wait(500)
-    drive_base.settings(
-        straight_speed=1000,
-        straight_acceleration=1000,
-        turn_rate=400,
-        turn_acceleration=500
-    )
-    drive_base.straight(200)
-    drive_base.turn(65)
+    drive_base.turn(-85)
+    drive_base.straight(320)
+    # drive_base.turn(-60)
+    # drive_base.settings(
+    #     straight_speed=100,
+    #     straight_acceleration=1000,
+    #     turn_rate=400,
+    #     turn_acceleration=500
+    # )
+    # drive_base.straight(-200)
+    # wait(500)
+    # drive_base.settings(
+    #     straight_speed=1000,
+    #     straight_acceleration=1000,
+    #     turn_rate=400,
+    #     turn_acceleration=500
+    # )
+    # drive_base.straight(200)
+    # drive_base.turn(70)
+    # drive_base.straight(-20)
+
+    # drive_base.turn(15)
+    # drive_base.straight(-100)
     # drive_base.straight(500)
     # drive_base.straight_until_stalled(speed=-300)
 
