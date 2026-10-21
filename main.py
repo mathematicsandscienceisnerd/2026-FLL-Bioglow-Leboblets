@@ -20,7 +20,7 @@ rd = Motor(Port.E, positive_direction=Direction.CLOCKWISE)
 lbm = Motor(Port.C)
 rbm = Motor(Port.D)
 
-AXLE_TRACK = 135
+AXLE_TRACK = 137
 WHEEL_DIAMETRE = 60
 
 class LebobletsBase(DriveBase):
@@ -198,8 +198,24 @@ def mission_3():
 
     drive_base.turn(-85)
     drive_base.straight(-30)
-    drive_base.turn(-85)
-    drive_base.straight(320)
+    drive_base.turn(-70)
+    drive_base.straight(370)
+    drive_base.turn(-60)
+    drive_base.straight(-100)
+    drive_base.settings(
+        straight_speed=100,
+        straight_acceleration=1000,
+        turn_rate=400,
+        turn_acceleration=500
+    )
+    drive_base.straight(-300)
+    wait(500)
+    drive_base.settings(
+        straight_speed=1000,
+        straight_acceleration=1000,
+        turn_rate=400,
+        turn_acceleration=500
+    )
     # drive_base.turn(-60)
     # drive_base.settings(
     #     straight_speed=100,
