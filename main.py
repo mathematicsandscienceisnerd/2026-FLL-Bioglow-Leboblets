@@ -208,7 +208,7 @@ def mission_3():
         turn_rate=400,
         turn_acceleration=500
     )
-    drive_base.straight(-300)
+    drive_base.straight(-200)
     wait(500)
     drive_base.settings(
         straight_speed=1000,
@@ -216,6 +216,9 @@ def mission_3():
         turn_rate=400,
         turn_acceleration=500
     )
+    drive_base.straight(120)
+    drive_base.turn(90)
+    drive_base.straight(-300)
     # drive_base.turn(-60)
     # drive_base.settings(
     #     straight_speed=100,
@@ -240,12 +243,20 @@ def mission_3():
     # drive_base.straight(500)
     # drive_base.straight_until_stalled(speed=-300)
 
-@mission("First drive calibrate.")
+@mission("Rock.")
 def mission_4():
     wait(500)
-    drive_base.first_drive_callibrate(1000)
+    drive_base.straight_until_stalled(speed=-100)
     wait(500)
-    drive_base.straight(100)
+    drive_base.straight(450)
+    wait(500)
+    drive_base.straight(-450)
+
+@mission("Drone + smth else")
+def mission_5():
+    wait(500)
+    drive_base.straight(740)
+    drive_base.turn(-45)
 
 def main():
     voltage = hub.battery.voltage()
