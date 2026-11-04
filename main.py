@@ -17,8 +17,8 @@ hub = PrimeHub()
 ld = Motor(Port.F, positive_direction=Direction.COUNTERCLOCKWISE)
 rd = Motor(Port.E, positive_direction=Direction.CLOCKWISE)
 
-lbm = Motor(Port.C)
-rbm = Motor(Port.D)
+rbm = Motor(Port.C)
+lbm = Motor(Port.D)
 
 AXLE_TRACK = 137
 WHEEL_DIAMETRE = 60
@@ -243,14 +243,15 @@ def mission_3():
     # drive_base.straight(500)
     # drive_base.straight_until_stalled(speed=-300)
 
-@mission("Rock.")
+@mission("Rock.+Thingy")
 def mission_4():
-    wait(500)
-    drive_base.straight_until_stalled(speed=-100)
-    wait(500)
-    drive_base.straight(450)
-    wait(500)
-    drive_base.straight(-450)
+    rbm.run_angle(400, -100)
+    drive_base.straight(100)
+    drive_base.turn(45)
+    drive_base.straight(390)
+    rbm.run_angle(400, -200)
+    drive_base.straight(-150)
+    
 
 @mission("Drone + smth else")
 def mission_5():
