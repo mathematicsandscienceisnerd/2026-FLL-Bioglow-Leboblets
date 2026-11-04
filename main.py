@@ -253,11 +253,22 @@ def mission_4():
     drive_base.straight(-150)
     
 
-@mission("Drone + smth else")
+@mission("Drone Mission")
 def mission_5():
     wait(500)
-    drive_base.straight(740)
+    drive_base.straight(750)
+    drive_base.straight(-50)
+    drive_base.turn(-46)
+    # drive_base.straight(10)
+    # drive_base.turn(-22)
+    drive_base.turn(46)
+    drive_base.straight(-300)
     drive_base.turn(-45)
+    drive_base.straight(400)
+    drive_base.turn(45)
+    drive_base.straight(600)
+    drive_base.turn(30)
+
 
 def main():
     voltage = hub.battery.voltage()
