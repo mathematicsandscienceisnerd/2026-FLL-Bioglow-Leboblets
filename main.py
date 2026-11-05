@@ -245,12 +245,16 @@ def mission_3():
 
 @mission("Rock.+Thingy")
 def mission_4():
-    rbm.run_angle(400, -100)
+    # rbm.run_angle(400, -100)
+    # rbm.run_until_stalled(200)
     drive_base.straight(100)
-    drive_base.turn(45)
-    drive_base.straight(390)
-    rbm.run_angle(400, -200)
-    drive_base.straight(-150)
+    drive_base.turn(48)
+    rbm.run_angle(400, 50)
+    drive_base.straight(365)
+    rbm.run_angle(400, -100)
+    drive_base.straight(-200)
+    rbm.run_angle(400, 100)
+
     
 
 @mission("Drone Mission")
