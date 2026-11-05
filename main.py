@@ -249,12 +249,16 @@ def mission_4():
     # rbm.run_until_stalled(200)
     drive_base.straight(100)
     drive_base.turn(48)
-    rbm.run_angle(400, 50)
-    drive_base.straight(365)
-    rbm.run_angle(400, -100)
-    drive_base.straight(-200)
-    rbm.run_angle(400, 100)
-
+    drive_base.straight(355)
+    rbm.run_angle(400, -105)
+    drive_base.straight(-350)
+    # rbm.run_angle(400, 125)
+    drive_base.turn(-48)
+    drive_base.straight(305)
+    drive_base.turn(-10)
+    drive_base.straight(10)
+    drive_base.straight(-315)
+    rbm.run_angle(400, 105)
     
 
 @mission("Drone Mission")
