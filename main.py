@@ -131,7 +131,7 @@ def save_mission_index(index):
         pass
 
 def mission_selector():
-    mission_index = load_saved_mission_index()
+    mission_index = 4
 
     print(f"\n[Selected Mission {mission_index + 1}]: {missions[mission_index]['desc']}")
 
@@ -243,22 +243,22 @@ def mission_3():
     # drive_base.straight(500)
     # drive_base.straight_until_stalled(speed=-300)
 
-@mission("Rock.+Thingy")
+@mission("Seed+Rock")
 def mission_4():
     # rbm.run_angle(400, -100)
     # rbm.run_until_stalled(200)
-    drive_base.straight(100)
-    drive_base.turn(48)
-    drive_base.straight(355)
-    rbm.run_angle(400, -105)
-    drive_base.straight(-350)
+    drive_base.straight(60)
+    drive_base.turn(45)
+    drive_base.straight(370)
+    rbm.run_angle(400, -90)
+    drive_base.straight(-355)
     # rbm.run_angle(400, 125)
-    drive_base.turn(-48)
-    drive_base.straight(305)
+    drive_base.turn(-45)
+    drive_base.straight(330)
     drive_base.turn(-10)
-    drive_base.straight(10)
+    drive_base.straight(40)
     drive_base.straight(-315)
-    rbm.run_angle(400, 105)
+    rbm.run_angle(400, 90)
     
 
 @mission("Drone Mission")
