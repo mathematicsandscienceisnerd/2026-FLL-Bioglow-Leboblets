@@ -245,21 +245,17 @@ def mission_3():
 
 @mission("Seed+Rock")
 def mission_4():
-    # rbm.run_angle(400, -100)
-    # rbm.run_until_stalled(200)
-    drive_base.straight(60)
-    drive_base.turn(45)
-    drive_base.straight(370)
-    rbm.run_angle(400, -90)
-    drive_base.straight(-355)
-    # rbm.run_angle(400, 125)
-    drive_base.turn(-45)
-    drive_base.straight(330)
-    drive_base.turn(-10)
-    drive_base.straight(40)
-    drive_base.straight(-315)
-    rbm.run_angle(400, 90)
-    
+    wait(500)
+    drive_base.straight(400)
+    drive_base.straight(-400)
+    rbm.run_until_stalled(-300)
+    drive_base.straight(100)
+    drive_base.turn(50)
+    drive_base.straight(350)
+    rbm.run_angle(300, 100)
+    drive_base.straight(-350)
+    drive_base.turn(-50)
+    drive_base.straight(-100)
 
 @mission("Drone Mission+Animal Drop")
 def mission_5():
