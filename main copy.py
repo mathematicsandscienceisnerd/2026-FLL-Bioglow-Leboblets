@@ -14,13 +14,13 @@ from pybricks.tools import wait, StopWatch
 
 hub = PrimeHub()
 
-ld = Motor(Port.E, positive_direction=Direction.COUNTERCLOCKWISE)
-rd = Motor(Port.F, positive_direction=Direction.CLOCKWISE)
+ld = Motor(Port.F, positive_direction=Direction.COUNTERCLOCKWISE)
+rd = Motor(Port.E, positive_direction=Direction.CLOCKWISE)
 
-lbm = Motor(Port.C)
-rbm = Motor(Port.D)
+rbm = Motor(Port.C)
+lbm = Motor(Port.D)
 
-AXLE_TRACK = 135
+AXLE_TRACK = 137
 WHEEL_DIAMETRE = 60
 
 class LebobletsBase(DriveBase):
@@ -131,7 +131,7 @@ def save_mission_index(index):
         pass
 
 def mission_selector():
-    mission_index = load_saved_mission_index()
+    mission_index = 4
 
     print(f"\n[Selected Mission {mission_index + 1}]: {missions[mission_index]['desc']}")
 
@@ -182,9 +182,11 @@ def mission_2():
 
 @mission("Blue side.")
 def mission_3():
+    global drive_base
     wait(500)
     drive_base.straight_until_stalled(speed=-100)
-    drive_base.straight(680)
+    wait(500)
+    drive_base.straight(718)
     drive_base.turn(45)
     drive_base.straight_until_stalled(speed=300)
     wait(1000)
@@ -192,19 +194,94 @@ def mission_3():
     drive_base.turn(15)
     drive_base.straight(60)
     drive_base.turn(20)
-    drive_base.straight(-100)
-    drive_base.turn(-80)
-    drive_base.straight(-20)
+    drive_base.straight(-80)
+
     drive_base.turn(-85)
-    drive_base.straight(100)
+    drive_base.straight(-30)
+    drive_base.turn(-70)
+    drive_base.straight(370)
+    drive_base.turn(-60)
+    drive_base.straight(-100)
+    drive_base.settings(
+        straight_speed=100,
+        straight_acceleration=1000,
+        turn_rate=400,
+        turn_acceleration=500
+    )
+    drive_base.straight(-200)
+    wait(500)
+    drive_base.settings(
+        straight_speed=1000,
+        straight_acceleration=1000,
+        turn_rate=400,
+        turn_acceleration=500
+    )
+    drive_base.straight(140)
+    drive_base.turn(90)
+    drive_base.straight(-300)
+    # drive_base.turn(-60)
+    # drive_base.settings(
+    #     straight_speed=100,
+    #     straight_acceleration=1000,
+    #     turn_rate=400,
+    #     turn_acceleration=500
+    # )
+    # drive_base.straight(-200)
+    # wait(500)
+    # drive_base.settings(
+    #     straight_speed=1000,
+    #     straight_acceleration=1000,
+    #     turn_rate=400,
+    #     turn_acceleration=500
+    # )
+    # drive_base.straight(200)
+    # drive_base.turn(70)
+    # drive_base.straight(-20)
+
+    # drive_base.turn(15)
+    # drive_base.straight(-100)
+    # drive_base.straight(500)
     # drive_base.straight_until_stalled(speed=-300)
 
-@mission("First drive calibrate.")
+@mission("Seed+Rock")
 def mission_4():
+    # rbm.run_angle(400, -100)
+    # rbm.run_until_stalled(200)
+    drive_base.straight(60)
+    drive_base.turn(45)
+    drive_base.straight(370)
+    rbm.run_angle(400, -90)
+    drive_base.straight(-355)
+    # rbm.run_angle(400, 125)
+    drive_base.turn(-45)
+    drive_base.straight(330)
+    drive_base.turn(-10)
+    drive_base.straight(40)
+    drive_base.straight(-315)
+    rbm.run_angle(400, 90)
+    
+
+@mission("Drone Mission+Animal Drop")
+def mission_5():
     wait(500)
-    drive_base.first_drive_callibrate(1000)
-    wait(500)
-    drive_base.straight(100)
+    drive_base.straight(720)
+    drive_base.straight(-60)
+    drive_base.turn(-46)
+    # drive_base.straight(10)
+    # drive_base.turn(-22)
+    drive_base.turn(46)
+    drive_base.straight(-300)
+    drive_base.turn(-45)
+    drive_base.straight(370)
+    drive_base.turn(20)
+    drive_base.straight(175)
+    drive_base.turn(25)
+    drive_base.straight(45)
+    lbm.run_angle(400,180)
+    lbm.run_angle(400,-180)
+    # drive_base.straight(600)
+    # drive_base.turn(30)
+
 
 def main():
     voltage = hub.battery.voltage()
