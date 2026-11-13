@@ -245,42 +245,52 @@ def mission_3():
 
 @mission("Seed+Rock")
 def mission_4():
-    # rbm.run_angle(400, -100)
-    # rbm.run_until_stalled(200)
-    drive_base.straight(60)
-    drive_base.turn(45)
-    drive_base.straight(370)
-    rbm.run_angle(400, -90)
-    drive_base.straight(-355)
-    # rbm.run_angle(400, 125)
-    drive_base.turn(-45)
-    drive_base.straight(330)
-    drive_base.turn(-10)
-    drive_base.straight(40)
-    drive_base.straight(-315)
-    rbm.run_angle(400, 90)
-    
+    wait(500)
+    drive_base.straight(400)
+    drive_base.straight(-400)
+    rbm.run_until_stalled(-300)
+    drive_base.straight(100)
+    drive_base.turn(50)
+    drive_base.straight(350)
+    rbm.run_until_stalled(300)
+    rbm.hold()
+    drive_base.straight(-350)
+    drive_base.turn(-50)
+    drive_base.straight(-100)
 
 @mission("Drone Mission+Animal Drop")
 def mission_5():
     wait(500)
-    drive_base.straight(720)
-    drive_base.straight(-60)
-    drive_base.turn(-46)
-    # drive_base.straight(10)
-    # drive_base.turn(-22)
-    drive_base.turn(46)
-    drive_base.straight(-300)
+    drive_base.straight(285)
+    drive_base.settings(
+        straight_speed=100,
+        straight_acceleration=1000,
+        turn_rate=400,
+        turn_acceleration=500
+    )
+    drive_base.straight(30)
+    drive_base.settings(
+        straight_speed=1000,
+        straight_acceleration=1000,
+        turn_rate=400,
+        turn_acceleration=500
+    )
+    drive_base.straight(405)
+    drive_base.straight(-55)
+    drive_base.turn(-48)
+    drive_base.turn(48)
+    drive_base.straight(-320)
     drive_base.turn(-45)
-    drive_base.straight(370)
+    drive_base.straight(340)
     drive_base.turn(20)
     drive_base.straight(175)
     drive_base.turn(25)
-    drive_base.straight(45)
-    lbm.run_angle(400,180)
-    lbm.run_angle(400,-180)
-    # drive_base.straight(600)
-    # drive_base.turn(30)
+    drive_base.straight(95)
+    lbm.run_angle(250,135)
+    lbm.run_angle(400,-135)
+    drive_base.straight(325)
+    drive_base.turn(25)
+    drive_base.straight(450)
 
 
 def main():
