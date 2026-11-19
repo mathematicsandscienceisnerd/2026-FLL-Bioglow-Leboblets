@@ -188,11 +188,21 @@ def mission_3():
     drive_base.straight(10)
     lbm.run_angle(300, 80)
     drive_base.straight(15)
-    lbm.run_angle(300, 180)
     lbm.hold()
-    drive_base.straight(50)
-    drive_base.turn(30)
-    lbm.run_target(500, 0)
+    drive_base.straight(30)
+    drive_base.turn(45)
+    drive_base.straight(100)
+    wait(1000)
+    drive_base.straight(-100)
+    drive_base.turn(10)
+    drive_base.straight(55)
+    drive_base.turn(20)
+    drive_base.straight(-200)
+    drive_base.turn(40)
+    drive_base.straight(-200)
+    drive_base.turn(100)
+    drive_base.straight(-100)
+    
     
 
 
