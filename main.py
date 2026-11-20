@@ -254,6 +254,8 @@ def mission_5():
 
 @mission("Tree + Vine really cool bro.")
 def mission_6():
+    # rbm.run_angle(500, 40)
+    # drive_base.straight(100)
     rbm.run_angle(300, 40)
     rbm.run_target(500, 0)
     rbm.run_angle(500, 80)
@@ -261,10 +263,11 @@ def mission_6():
     drive_base.turn(45)
     drive_base.straight(640)
     drive_base.turn(-45)
-    drive_base.straight(-50)
-    rbm.run_target(500, 25)
-    drive_base.straight(40)
-    rbm.run_angle(400, 50)
+    drive_base.straight(-60)
+    rbm.run_target(500, 100)
+    drive_base.straight(100)
+    rbm.run_angle(500, 90)
+
 
 def main():
     lbm.reset_angle(0)
