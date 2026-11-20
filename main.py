@@ -129,7 +129,7 @@ def save_mission_index(index):
         pass
 
 def mission_selector():
-    mission_index = 2
+    mission_index = 5
 
     print(f"\n[Selected Mission {mission_index + 1}]: {missions[mission_index]['desc']}")
 
@@ -202,9 +202,6 @@ def mission_3():
     drive_base.straight(-200)
     drive_base.turn(100)
     drive_base.straight(-100)
-    
-    
-
 
 @mission("Seed+Rock")
 def mission_4():
@@ -255,6 +252,19 @@ def mission_5():
     drive_base.turn(25)
     drive_base.straight(450)
 
+@mission("Tree + Vine really cool bro.")
+def mission_6():
+    rbm.run_angle(300, 40)
+    rbm.run_target(500, 0)
+    rbm.run_angle(500, 80)
+    drive_base.straight(200)
+    drive_base.turn(45)
+    drive_base.straight(640)
+    drive_base.turn(-45)
+    drive_base.straight(-50)
+    rbm.run_target(500, 25)
+    drive_base.straight(40)
+    rbm.run_angle(400, 50)
 
 def main():
     lbm.reset_angle(0)

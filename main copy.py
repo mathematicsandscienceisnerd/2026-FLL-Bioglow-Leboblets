@@ -110,8 +110,6 @@ def reset_robot():
 
     drive_base.reset()
     hub.imu.reset_heading(0)
-    lbm.reset_angle(0)
-    rbm.reset_angle(0)
 
 storage_offset = 0
 
@@ -131,7 +129,7 @@ def save_mission_index(index):
         pass
 
 def mission_selector():
-    mission_index = 4
+    mission_index = 2
 
     print(f"\n[Selected Mission {mission_index + 1}]: {missions[mission_index]['desc']}")
 
@@ -183,65 +181,30 @@ def mission_2():
 @mission("Blue side.")
 def mission_3():
     global drive_base
-    wait(500)
-    drive_base.straight_until_stalled(speed=-100)
-    wait(500)
-    drive_base.straight(718)
+    lbm.run_angle(500, 120)
+    lbm.run_target(500, 0)
+    drive_base.straight(650)
+    lbm.run_angle(300, 100)
+    drive_base.straight(10)
+    lbm.run_angle(300, 80)
+    drive_base.straight(15)
+    lbm.hold()
+    drive_base.straight(30)
     drive_base.turn(45)
-    drive_base.straight_until_stalled(speed=300)
+    drive_base.straight(100)
     wait(1000)
-    drive_base.straight(-75)
-    drive_base.turn(15)
-    drive_base.straight(60)
-    drive_base.turn(20)
-    drive_base.straight(-80)
-
-    drive_base.turn(-85)
-    drive_base.straight(-30)
-    drive_base.turn(-70)
-    drive_base.straight(370)
-    drive_base.turn(-60)
     drive_base.straight(-100)
-    drive_base.settings(
-        straight_speed=100,
-        straight_acceleration=1000,
-        turn_rate=400,
-        turn_acceleration=500
-    )
+    drive_base.turn(10)
+    drive_base.straight(55)
+    drive_base.turn(20)
     drive_base.straight(-200)
-    wait(500)
-    drive_base.settings(
-        straight_speed=1000,
-        straight_acceleration=1000,
-        turn_rate=400,
-        turn_acceleration=500
-    )
-    drive_base.straight(140)
-    drive_base.turn(90)
-    drive_base.straight(-300)
-    # drive_base.turn(-60)
-    # drive_base.settings(
-    #     straight_speed=100,
-    #     straight_acceleration=1000,
-    #     turn_rate=400,
-    #     turn_acceleration=500
-    # )
-    # drive_base.straight(-200)
-    # wait(500)
-    # drive_base.settings(
-    #     straight_speed=1000,
-    #     straight_acceleration=1000,
-    #     turn_rate=400,
-    #     turn_acceleration=500
-    # )
-    # drive_base.straight(200)
-    # drive_base.turn(70)
-    # drive_base.straight(-20)
+    drive_base.turn(40)
+    drive_base.straight(-200)
+    drive_base.turn(100)
+    drive_base.straight(-100)
+    
+    
 
-    # drive_base.turn(15)
-    # drive_base.straight(-100)
-    # drive_base.straight(500)
-    # drive_base.straight_until_stalled(speed=-300)
 
 @mission("Seed+Rock")
 def mission_4():
@@ -294,6 +257,8 @@ def mission_5():
 
 
 def main():
+    lbm.reset_angle(0)
+    rbm.reset_angle(0)
     voltage = hub.battery.voltage()
     percentage = max(0, min(100, (voltage - 6000) * 100 // (8400 - 6000)))
     settings = drive_base.settings()
