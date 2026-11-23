@@ -200,8 +200,22 @@ def mission_3():
     drive_base.straight(-200)
     drive_base.turn(40)
     drive_base.straight(-200)
-    drive_base.turn(100)
+    drive_base.turn(105)
     drive_base.straight(-100)
+    drive_base.settings(
+        straight_speed=100,
+        straight_acceleration=1000,
+        turn_rate=400,
+        turn_acceleration=500
+    )
+    drive_base.straight(-180)
+    drive_base.settings(
+        straight_speed=1000,
+        straight_acceleration=1000,
+        turn_rate=400,
+        turn_acceleration=500
+    )
+    drive_base.straight(280)
 
 @mission("Seed+Rock")
 def mission_4():
