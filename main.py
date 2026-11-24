@@ -263,43 +263,57 @@ def mission_5():
     drive_base.straight(175)
     drive_base.turn(25)
     drive_base.straight(95)
-    lbm.run_angle(250,135)
-    lbm.run_angle(400,-135)
+    lbm.run_angle(250,145)
+    lbm.run_angle(400,-145)
     drive_base.straight(325)
     drive_base.turn(25)
-    drive_base.straight(30)
+    drive_base.straight(600)
 
 @mission("Tree + Vine")
 def mission_6():
-    rbm.run_angle(300, 40)
-    rbm.run_target(500, 0)
-    drive_base.straight(200)
-    drive_base.turn(45)
-    drive_base.straight(640)
-    drive_base.turn(-45)
-    drive_base.straight(-60)
-    rbm.run_angle(500, 30)
-    drive_base.settings(
-        straight_speed=200,
-        straight_acceleration=1000,
-        turn_rate=400,
-        turn_acceleration=500
-    )
-    drive_base.straight(100)
-    drive_base.settings(
-        straight_speed=1000,
-        straight_acceleration=1000,
-        turn_rate=400,
-        turn_acceleration=500
-    )
-    drive_base.straight(100)
-    drive_base.settings(
-        straight_speed=200,
-        straight_acceleration=1000,
-        turn_rate=400,
-        turn_acceleration=500
-    )
-    drive_base.straight(-200)
+    drive_base.straight(90)
+    drive_base.turn(20)
+    drive_base.straight(590)
+    drive_base.turn(-20)
+    drive_base.straight(95)
+    rbm.run_angle(1000,-20)
+    rbm.run_angle(1000,170)
+    drive_base.straight(60)
+    rbm.run_angle(1000,-150)
+    drive_base.straight(15)
+    # rbm.run_angle(400,50)
+
+
+
+    # rbm.run_angle(300, 40)
+    # rbm.run_target(500, 0)
+    # drive_base.straight(200)
+    # drive_base.turn(45)
+    # drive_base.straight(640)
+    # drive_base.turn(-45)
+    # drive_base.straight(-60)
+    # rbm.run_angle(500, 30)
+    # drive_base.settings(
+    #     straight_speed=200,
+    #     straight_acceleration=1000,
+    #     turn_rate=400,
+    #     turn_acceleration=500
+    # )
+    # drive_base.straight(100)
+    # drive_base.settings(
+    #     straight_speed=1000,
+    #     straight_acceleration=1000,
+    #     turn_rate=400,
+    #     turn_acceleration=500
+    # )
+    # drive_base.straight(100)
+    # drive_base.settings(
+    #     straight_speed=200,
+    #     straight_acceleration=1000,
+    #     turn_rate=400,
+    #     turn_acceleration=500
+    # )
+    # drive_base.straight(-200)
 
 
 def main():
