@@ -273,11 +273,12 @@ def mission_5():
 def mission_6():
     drive_base.straight(90)
     drive_base.turn(20)
-    drive_base.straight(540)
+    drive_base.straight(450)
     drive_base.turn(-20)
-    drive_base.straight(165)
-    rbm.run_angle(500,-20)
-    rbm.run_angle(500,170)
+    rbm.run_angle(500,-65)
+    drive_base.straight(200)
+    
+    rbm.run_angle(700,130)
     drive_base.settings(
         straight_speed=100,
         straight_acceleration=1000,
@@ -287,9 +288,14 @@ def mission_6():
     drive_base.straight(80)
     drive_base.turn(-20)
     drive_base.straight(-80)
-    rbm.run_angle(500,-150)
+    drive_base.turn(10)
+    rbm.run_angle(500,-50)
+    drive_base.straight(50)
 
     drive_base.straight(15)
+    rbm.run_angle(500, 10)
+    drive_base.straight(20)
+
     drive_base.settings(
         straight_speed=1000,
         straight_acceleration=1000,
