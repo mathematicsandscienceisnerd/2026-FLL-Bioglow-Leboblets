@@ -271,6 +271,7 @@ def mission_5():
 
 @mission("Tree + Vine")
 def mission_6():
+    wait(500)
     drive_base.straight(90)
     drive_base.turn(20)
     drive_base.straight(475)
@@ -343,6 +344,22 @@ def mission_6():
     #     turn_acceleration=500
     # )
     # drive_base.straight(-200)
+
+@mission("The Tree temporaAry mission,")
+def mission_7():
+    wait(500)
+    drive_base.straight(90)
+    drive_base.turn(40)
+    drive_base.straight(740)
+    drive_base.turn(-40)
+    drive_base.settings(
+        straight_speed=300,
+        straight_acceleration=1000,
+        turn_rate=400,
+        turn_acceleration=500
+    )
+    drive_base.straight(150)
+    drive_base.straight(-150)
 
 
 def main():
